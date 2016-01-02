@@ -17,11 +17,11 @@
             <div class="row">
                 
                 <div class="col-md-4">
-                    <h2 id="turn">Player <span>1</span> Turn</h2>
+                    <h2 id="turn">Player <span id="player">1</span> Turn</h2>
                     <div id="rolldice">
                         <button id="roller"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQjqVJja1QR6dXeTOnv1WheubiystRmL_UFQ3x6ptShKoGVTi7Y"></button>
                         <div id="dice">
-                            <h3>Roll 1</h3>
+                            <h3>Roll <span id="rollNum"></span></h3>
                             <button class="die" id="die1"></button>
                             <button class="die" id="die2"></button>
                             <button class="die" id="die3"></button>
@@ -29,16 +29,13 @@
                             <button class="die" id="die5"></button>
                         </div>
                     </div>
+                    <h4 id="recent"></h4>
                 
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-4">
                     <table class="table table-bordered table-striped">
                         <tr>
                             <td>Basic</td>
-                            <td>Description</td>
-                            <td>P1</td>
-                            <td>P2</td>
-                            <td>Complex</td>
                             <td>Description</td>
                             <td>P1</td>
                             <td>P2</td>
@@ -48,17 +45,9 @@
                             <td></td>
                             <td class="p1"></td>
                             <td></td>
-                            <td><button type="button" class="btn btn-default btn-xs btn-block">3 of a Kind</button></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
                         </tr>
                         <tr>
                             <td><button type="button" class="btn btn-default btn-xs btn-block">Twos</button></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><button type="button" class="btn btn-default btn-xs btn-block">4 of a Kind</button></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -68,17 +57,9 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td><button type="button" class="btn btn-default btn-xs btn-block">Full House</button></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
                         </tr>
                         <tr>
                             <td><button type="button" class="btn btn-default btn-xs btn-block">Fours</button></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><button type="button" class="btn btn-default btn-xs btn-block">Sm Straight</button></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -88,17 +69,9 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td><button type="button" class="btn btn-default btn-xs btn-block">Lg Straight</button></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
                         </tr>
                         <tr>
                             <td><button type="button" class="btn btn-default btn-xs btn-block">Sixes</button></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><button type="button" class="btn btn-default btn-xs btn-block">YAHTZEE</button></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -108,17 +81,9 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td><button type="button" class="btn btn-default btn-xs btn-block">Chance</button></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
                         </tr>
                         <tr>
                             <td>BONUS 63+</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Complex TOTAL</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -128,6 +93,66 @@
                             <td></td>
                             <td></td>
                             <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-4">
+                    <table class="table table-bordered table-striped">
+                        <tr>
+                            <td>Complex</td>
+                            <td>Description</td>
+                            <td>P1</td>
+                            <td>P2</td>
+                        </tr>
+                        <tr>
+                            <td><button type="button" class="btn btn-default btn-xs btn-block">3ofaKind</button></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><button type="button" class="btn btn-default btn-xs btn-block">4ofaKind</button></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><button type="button" class="btn btn-default btn-xs btn-block">Full House</button></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><button type="button" class="btn btn-default btn-xs btn-block">SmStraight</button></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><button type="button" class="btn btn-default btn-xs btn-block">LgStraight</button></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><button type="button" class="btn btn-default btn-xs btn-block">YAHTZEE</button></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><button type="button" class="btn btn-default btn-xs btn-block">Chance</button></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Complex TOTAL</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
                             <td>GRAND TOTAL</td>
                             <td></td>
                             <td></td>

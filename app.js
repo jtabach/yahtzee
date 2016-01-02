@@ -1,9 +1,7 @@
 
 var dieSpotIDs = ["#die1", "#die2", "#die3", "#die4", "#die5"];
-
-var randomDie = function() {
-    return Math.floor(Math.random() * 6);
-}
+var rollNum = 0;
+var player = 1;
 
 var dice = [
     {
@@ -32,6 +30,10 @@ var dice = [
     }
 ];
 
+var randomDie = function() {
+    return Math.floor(Math.random() * 6);
+}
+
 var showRoll = function() {
     
     dieSpotIDs.forEach(function(elem, ind) {
@@ -41,13 +43,49 @@ var showRoll = function() {
                 .css('background-repeat', 'no-repeat');
         }
     });
+    rollNum++;
 }
 
+var appendRollNum = function() {
+    $('#rollNum').html(rollNum);
+}
+
+var selectAll = function() {
+    $('.die').addClass('selected');
+}
+
+var resetRoll = function() {
+    $('.die').css('background', '');
+}
     
+var newTurn = function(select) {
+    showRecent(select);
+    if (player === 1) {
+        player = 2;
+    } else {
+        player = 1
+    }
+    $('#player').html(player);
+    rollNum = 0;
+    appendRollNum();
+    $('.die').removeClass('selected');
+}
+
+var showRecent = function(select) {
+    $('#recent').html("Player " + player + " scored {blank} on his " + select + ".");
+}
+
 $(document).ready(function() {
     
     $('#roller').on('click', function() {
-        showRoll();
+        console.log(rollNum);
+        if (rollNum !== 3) {
+            showRoll();
+            appendRollNum();
+        }
+        if (rollNum === 3){
+            selectAll();
+        }
     });
     
     $('.die').on('click', function() {
@@ -58,4 +96,25 @@ $(document).ready(function() {
         }
     });
     
+    $('.btn').on('click', function() {
+        var selection = $(this).html();
+        console.log(selection);
+        resetRoll();
+        newTurn(selection);
+    });
+    
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
