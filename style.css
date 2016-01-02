@@ -26,11 +26,10 @@ button:focus {
 }
 
 .die {
-    float: left;
     width: 30%;
     padding-bottom: 30%;
-    margin: 1%;
-    background-size: 97%;
+    margin: 1px;
+    background-size: 99%;
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
@@ -45,3 +44,6 @@ button:focus {
     margin:0 0 5px 5px;;
 }
 
+.selected {
+    opacity: .5;
+}

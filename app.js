@@ -37,20 +37,25 @@ var showRoll = function() {
     dieSpotIDs.forEach(function(elem, ind) {
         if (!$(elem).hasClass('selected')) {
             $(elem).css('background',  'url(' + dice[randomDie()].image + ')')
-                .css('background-size', '97%')
+                .css('background-size', '100%')
                 .css('background-repeat', 'no-repeat');
         }
     });
 }
 
-    console.log(randomDie());
     
 $(document).ready(function() {
     
     $('#roller').on('click', function() {
-    
         showRoll();
-        
+    });
+    
+    $('.die').on('click', function() {
+        if ($(this).hasClass('selected')) {
+            $(this).removeClass('selected');
+        } else {
+            $(this).addClass('selected');
+        }
     });
     
 });
