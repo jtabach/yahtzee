@@ -1,6 +1,5 @@
 
 var dieSpotIDs = ["#die1", "#die2", "#die3", "#die4", "#die5"];
-var diceRolled = [];
 var rollNum = 0;
 var player = 1;
 
@@ -39,9 +38,7 @@ var showRoll = function() {
     
     dieSpotIDs.forEach(function(elem, ind) {
         if (!$(elem).hasClass('selected')) {
-            var temp = randomDie();
-            diceRolled[ind] = dice[temp].value;
-            $(elem).css('background',  'url(' + dice[temp].image + ')')
+            $(elem).css('background',  'url(' + dice[randomDie()].image + ')')
                 .css('background-size', '100%')
                 .css('background-repeat', 'no-repeat');
         }
@@ -78,11 +75,6 @@ var showRecent = function(select) {
     $('#recent').html("Player " + player + " scored {blank} on thier " + select + ".");
 }
 
-var findDiceVal = function() {
-    console.log(diceRolled);
-    
-}
-
 $(document).ready(function() {
     
     $('#roller').on('click', function() {
@@ -94,7 +86,6 @@ $(document).ready(function() {
         if (rollNum === 3){
             selectAll();
         }
-         findDiceVal();
     });
     
     $('.die').on('click', function() {
@@ -103,7 +94,6 @@ $(document).ready(function() {
         } else {
             $(this).addClass('selected');
         }
-       
     });
     
     $('#ones').on('click', function() {

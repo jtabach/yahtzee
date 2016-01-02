@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<!-- saved from url=(0033)http://127.0.0.1:62084/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Yahtzee</title>
-        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-        <script src="app.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">
+        <script src="./Yahtzee_files/jquery-2.1.4.min.js"></script><style type="text/css"></style>
+        <script src="./Yahtzee_files/app.js"></script>
+        <script src="./Yahtzee_files/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./Yahtzee_files/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="./Yahtzee_files/style.css">
     </head>
     <body>
         
         
         <div class="container">
             <h1>YAHTZEE</h1>
-            <hr />
+            <hr>
             <div class="row">
                 
                 <div class="col-md-4">
                     <h2 id="turn">Player <span id="player">1</span> Turn</h2>
                     <div id="rolldice">
-                        <button id="roller"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQjqVJja1QR6dXeTOnv1WheubiystRmL_UFQ3x6ptShKoGVTi7Y"></button>
+                        <button id="roller"><img src="./Yahtzee_files/images"></button>
                         <div id="dice">
-                            <h3>Roll <span id="rollNum"></span></h3>
-                            <button class="die" id="die1"></button>
-                            <button class="die" id="die2"></button>
-                            <button class="die" id="die3"></button>
-                            <button class="die" id="die4"></button>
-                            <button class="die" id="die5"></button>
+                            <h3>Roll <span id="rollNum">1</span></h3>
+                            <button class="die" id="die1" style="background: url(&quot;img/Dice-3.png&quot;) no-repeat;"></button>
+                            <button class="die" id="die2" style="background: url(&quot;img/Dice-1.png&quot;) no-repeat;"></button>
+                            <button class="die" id="die3" style="background: url(&quot;img/Dice-1.png&quot;) no-repeat;"></button>
+                            <button class="die" id="die4" style="background: url(&quot;img/Dice-1.png&quot;) no-repeat;"></button>
+                            <button class="die" id="die5" style="background: url(&quot;img/Dice-2.png&quot;) no-repeat;"></button>
                         </div>
                     </div>
                     <h4 id="recent"></h4>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-md-4">
                     <table class="table table-bordered table-striped">
-                        <tr>
+                        <tbody><tr>
                             <td>Basic</td>
                             <td>Description</td>
                             <td>P1</td>
@@ -94,11 +94,11 @@
                             <td></td>
                             <td></td>
                         </tr>
-                    </table>
+                    </tbody></table>
                 </div>
                 <div class="col-md-4">
                     <table class="table table-bordered table-striped">
-                        <tr>
+                        <tbody><tr>
                             <td>Complex</td>
                             <td>Description</td>
                             <td>P1</td>
@@ -158,7 +158,7 @@
                             <td></td>
                             <td></td>
                         </tr>
-                    </table>
+                    </tbody></table>
                 </div>
             </div>
             
@@ -168,5 +168,5 @@
         <style>
             
         </style>
-    </body>
-</html>
+    
+</body></html>
