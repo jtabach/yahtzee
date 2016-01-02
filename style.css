@@ -1,3 +1,8 @@
+* {
+    margin:0;
+    padding:0;
+}
+
 button {
     cursor: pointer;
 }
@@ -5,3 +10,35 @@ button {
 button:focus {
     outline: 0 !important;
 }
+
+#turn {
+    margin: 0 0 5% 0;
+}
+
+#roller {
+    float: left;
+    width: 40%;
+    margin-right: 5%;
+}
+
+#roller img {
+    width: 100%;
+}
+
+.die {
+    float: left;
+    background: blue;
+    width: 30%;
+    padding-bottom: 30%;
+    margin: 1%;
+}
+
+#dice {
+    float: left;
+    width: 55%;
+}
+
+#dice h3 {
+    margin:0 0 5px 5px;;
+}
+
