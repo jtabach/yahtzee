@@ -27,10 +27,13 @@ button:focus {
 
 .die {
     float: left;
-    background: blue;
     width: 30%;
     padding-bottom: 30%;
     margin: 1%;
+    background-size: 97%;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
 }
 
 #dice {

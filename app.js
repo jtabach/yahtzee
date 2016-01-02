@@ -1,28 +1,56 @@
 
+var dieSpotIDs = ["#die1", "#die2", "#die3", "#die4", "#die5"];
 
-var dice = {
-    dice1: {
-        image: "Dice-1.png",
+var randomDie = function() {
+    return Math.floor(Math.random() * 6);
+}
+
+var dice = [
+    {
+        image: "img/Dice-1.png",
         value: 1
     },
-    dice1: {
-        image: "Dice-2.png",
+    {
+        image: "img/Dice-2.png",
         value: 2
     },
-    dice1: {
-        image: "Dice-3.png",
+    {
+        image: "img/Dice-3.png",
         value: 3
     },
-    dice1: {
-        image: "Dice-4.png",
+    {
+        image: "img/Dice-4.png",
         value: 4
     },
-    dice1: {
-        image: "Dice-5.png",
+    {
+        image: "img/Dice-5.png",
         value: 5
     },
-    dice1: {
-        image: "Dice-6.png",
+    {
+        image: "img/Dice-6.png",
         value: 6
-    },
+    }
+];
+
+var showRoll = function() {
+    
+    dieSpotIDs.forEach(function(elem, ind) {
+        if (!$(elem).hasClass('selected')) {
+            $(elem).css('background',  'url(' + dice[randomDie()].image + ')')
+                .css('background-size', '97%')
+                .css('background-repeat', 'no-repeat');
+        }
+    });
 }
+
+    console.log(randomDie());
+    
+$(document).ready(function() {
+    
+    $('#roller').on('click', function() {
+    
+        showRoll();
+        
+    });
+    
+});
