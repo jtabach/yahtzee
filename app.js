@@ -110,75 +110,21 @@ $(document).ready(function() {
        
     });
     
-    
-    $('#ones').on('click', function() {
-        var score = countSum(1);
-        if (player === 1) {
-            var classSel = '.p1';
-        } else {
-            var classSel = '.p2';
-        }
-        $(this).closest('td').siblings(classSel).html(score);
-    });
-    
-    $('#twos').on('click', function() {
-        var score = countSum(2);
-        if (player === 1) {
-            var classSel = '.p1';
-        } else {
-            var classSel = '.p2';
-        }
-        $(this).closest('td').siblings(classSel).html(score);
-    });
-    
-    
-    $('#threes').on('click', function() {
-        var score = countSum(3);
-        if (player === 1) {
-            var classSel = '.p1';
-        } else {
-            var classSel = '.p2';
-        }
-        $(this).closest('td').siblings(classSel).html(score);
-    });
-    
-    $('#fours').on('click', function() {
-        var score = countSum(4);
-        if (player === 1) {
-            var classSel = '.p1';
-        } else {
-            var classSel = '.p2';
-        }
-        $(this).closest('td').siblings(classSel).html(score);
-    });
-    
-    $('#fives').on('click', function() {
-        var score = countSum(5);
-        if (player === 1) {
-            var classSel = '.p1';
-        } else {
-            var classSel = '.p2';
-        }
-        $(this).closest('td').siblings(classSel).html(score);
-    });
-    
-    $('#sixes').on('click', function() {
-        var score = countSum(6);
-        if (player === 1) {
-            var classSel = '.p1';
-        } else {
-            var classSel = '.p2';
-        }
-        $(this).closest('td').siblings(classSel).html(score);
-    });
-    
-    
     $('.btn').on('click', function() {
+        var buttonID = this.id;
+        var buttonVal = Number($(this).attr("value"));
+        var score = countSum(buttonVal);
+        if (player === 1) {
+            var classSel = '.p1';
+        } else {
+            var classSel = '.p2';
+        }
+        $(this).closest('td').siblings(classSel).html(score);
         var selection = $(this).html();
-        console.log(selection);
         resetRoll();
         newTurn(selection);
     });
+    
     
     
     
