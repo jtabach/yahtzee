@@ -3,6 +3,7 @@ var dieSpotIDs = ["#die1", "#die2", "#die3", "#die4", "#die5"];
 var diceRolled = [];
 var rollNum = 0;
 var player = 1;
+var metCriteria = false;
 
 var dice = [
     {
@@ -30,6 +31,53 @@ var dice = [
         value: 6
     }
 ];
+
+var complex = {
+    three: {
+        id: "#3OfAKind",
+        clickHandler: function() {
+            threeKind();
+        }
+    },
+    four: {
+        id: "#4OfAKind",
+        clickHandler: function() {
+            fourKind();
+        }
+    },
+    full: {
+        id: "#fullHouse",
+        clickHandler: function() {
+            fullHouse();
+        }
+    },
+    small: {
+        id: "#smStraight",
+        clickHandler: function() {
+            smallStraight();
+        }
+    },
+    large: {
+        id: "#lgStraight",
+        clickHandler: function() {
+            largeStraight();
+        }
+    },
+    yahtzee: {
+        id: "#yahtzee",
+        clickHandler: function() {
+            yahtzee();
+        }
+    },
+    chance: {
+        id: "#chance",
+        clickHandler: function() {
+            chance();
+        }
+    },
+}
+
+var finishRoll = [0, 0, 0, 0, 0, 0];
 
 var randomDie = function() {
     return Math.floor(Math.random() * 6);
@@ -88,7 +136,37 @@ var countSum = function(num) {
     return sum;
 }
 
+function threeKind() {
+    alert(diceRolled);
+        diceRolled.forEach(function(elem, ind) {
+            finishRoll[elem-1]++;
+        });
+        alert(finishRoll);
+        finishRoll.forEach(function(elem, ind) {
+            if (elem >= 3) {
+                metCriteria = true;
+            } 
+        });
+        var sum = 0;
+        if (metCriteria === true) {
+            diceRolled.forEach(function(elem, ind) {
+                sum += elem;
+            });
+        }
+        alert(sum);
+};
+
+// sets up a click handler for complex options
+function complexClickHandler() {
+    for (var items in complex) {
+        $(complex[items].id).on('click', complex[items].clickHandler);
+    }
+}
+
 $(document).ready(function() {
+    
+    // Invoke click handler for complex options
+    complexClickHandler();
     
     $('#roller').on('click', function() {
         console.log(rollNum);
@@ -110,7 +188,7 @@ $(document).ready(function() {
        
     });
     
-    $('.btn').on('click', function() {
+    $('.basic button').on('click', function() {
         var buttonID = this.id;
         var buttonVal = Number($(this).attr("value"));
         var score = countSum(buttonVal);
@@ -123,7 +201,12 @@ $(document).ready(function() {
         var selection = $(this).html();
         resetRoll();
         newTurn(selection, score);
+        score = 0;
+        diceRolled = [];
     });
+    
+   
+    
     
     
     
