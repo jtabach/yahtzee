@@ -78,9 +78,14 @@ var showRecent = function(select) {
     $('#recent').html("Player " + player + " scored {blank} on thier " + select + ".");
 }
 
-var findDiceVal = function() {
-    console.log(diceRolled);
-    
+var countSum = function(num) {
+    var sum = 0;
+    diceRolled.forEach(function(elem, ind) {
+        if (elem === num) {
+            sum += num;
+        }
+    });
+    return sum;
 }
 
 $(document).ready(function() {
@@ -94,7 +99,6 @@ $(document).ready(function() {
         if (rollNum === 3){
             selectAll();
         }
-         findDiceVal();
     });
     
     $('.die').on('click', function() {
@@ -106,14 +110,68 @@ $(document).ready(function() {
        
     });
     
+    
     $('#ones').on('click', function() {
+        var score = countSum(1);
         if (player === 1) {
             var classSel = '.p1';
         } else {
             var classSel = '.p2';
         }
-        $(this).closest('td').siblings(classSel).html("hi");
+        $(this).closest('td').siblings(classSel).html(score);
     });
+    
+    $('#twos').on('click', function() {
+        var score = countSum(2);
+        if (player === 1) {
+            var classSel = '.p1';
+        } else {
+            var classSel = '.p2';
+        }
+        $(this).closest('td').siblings(classSel).html(score);
+    });
+    
+    
+    $('#threes').on('click', function() {
+        var score = countSum(3);
+        if (player === 1) {
+            var classSel = '.p1';
+        } else {
+            var classSel = '.p2';
+        }
+        $(this).closest('td').siblings(classSel).html(score);
+    });
+    
+    $('#fours').on('click', function() {
+        var score = countSum(4);
+        if (player === 1) {
+            var classSel = '.p1';
+        } else {
+            var classSel = '.p2';
+        }
+        $(this).closest('td').siblings(classSel).html(score);
+    });
+    
+    $('#fives').on('click', function() {
+        var score = countSum(5);
+        if (player === 1) {
+            var classSel = '.p1';
+        } else {
+            var classSel = '.p2';
+        }
+        $(this).closest('td').siblings(classSel).html(score);
+    });
+    
+    $('#sixes').on('click', function() {
+        var score = countSum(6);
+        if (player === 1) {
+            var classSel = '.p1';
+        } else {
+            var classSel = '.p2';
+        }
+        $(this).closest('td').siblings(classSel).html(score);
+    });
+    
     
     $('.btn').on('click', function() {
         var selection = $(this).html();
