@@ -61,8 +61,8 @@ var resetRoll = function() {
     $('.die').css('background', '');
 }
     
-var newTurn = function(select) {
-    showRecent(select);
+var newTurn = function(select, score) {
+    showRecent(select, score);
     if (player === 1) {
         player = 2;
     } else {
@@ -74,8 +74,8 @@ var newTurn = function(select) {
     $('.die').removeClass('selected');
 }
 
-var showRecent = function(select) {
-    $('#recent').html("Player " + player + " scored {blank} on thier " + select + ".");
+var showRecent = function(select, score) {
+    $('#recent').html("Player " + player + " scored " + score + " on thier " + select + ".");
 }
 
 var countSum = function(num) {
@@ -122,7 +122,7 @@ $(document).ready(function() {
         $(this).closest('td').siblings(classSel).html(score);
         var selection = $(this).html();
         resetRoll();
-        newTurn(selection);
+        newTurn(selection, score);
     });
     
     
@@ -130,7 +130,8 @@ $(document).ready(function() {
     
 });
 
-
+// TODO: restrict player from clicking before roll.
+// TODO: restrict player from clicking scored category.
 
 
 
